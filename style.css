@@ -1,0 +1,98 @@
+:root {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: "Josefin Sans", "Helvetica", sans-serif;
+  font-size: 1rem;
+}
+
+header, footer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+  background: steelblue;
+  color: white;
+  z-index: 1000;
+}
+
+header{
+  position: sticky;
+  top: 0;
+}
+
+header p{
+  margin: 0.5rem;
+}
+
+.gallery li{
+  list-style: none;
+}
+
+.card-item a{
+  text-decoration: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 2em;
+  padding: em;
+}
+
+.gallery img{
+  max-width: 100%;
+}
+
+.card-item, .card-item a, .card{
+  outline: 2px solid #f93020;
+  display: flex;
+  flex-basis: column;
+}
+.card-item a, .card, .card img{
+flex: 1;
+}
+
+.card-item {
+  overflow: hidden;
+}
+.card img{
+  object-fit: cover;
+  transition: 200ms transform ease-in-out;
+}
+
+.card{
+  position: relative;
+}
+
+
+.card figcaption{
+font-size: 1.5rem;
+color: #fff;
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+text-align: center;
+transform: scale(0);
+transition: 200ms transform ease-in-out;
+padding: 2em 0;
+}
+
+.card:hover figcaption{
+  transform: scale(1);
+  background-color: rgba(0, 0, 0, .55)
+}
+
+.card:hover img{
+  transform: scale(1.2);
+}
